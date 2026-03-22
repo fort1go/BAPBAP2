@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 5.0
+const BOX_SCENE = preload("res://materials/Box.tscn")
+const SPEED = 10.0
+const JUMP_VELOCITY = 10.0
 
 
 func _physics_process(delta: float) -> void:
@@ -24,5 +24,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+		
+	if Input.is_action_just_pressed("ulta"): 
+		var box = BOX_SCENE.instantiate()
+		var spawn_pos = global_position + (-global_transform.basis.z * 2.0)
+		get_tree().root.add_child(box)
+		box.global_position = spawn_pos
+		
 	move_and_slide()

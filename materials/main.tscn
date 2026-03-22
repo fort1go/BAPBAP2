@@ -33,23 +33,21 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=241746980]
 environment = SubResource("Environment_q2cl8")
 
-[node name="CameraPivot" type="Node3D" parent="." unique_id=1890461925]
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=2090550246]
-transform = Transform3D(0.9999834, 0.005695208, -0.0009471103, -0.0022985616, 0.5432127, 0.8395919, 0.0052961335, -0.83957577, 0.54321676, -0.104990065, 6.9320383, 10.975868)
-fov = 88.499466
-
 [node name="Player" type="CharacterBody3D" parent="." unique_id=222330651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16572666, 0)
 script = ExtResource("1_xits5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1900195637]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33549404, 1.5395265, -0.19239068)
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1, -0.33549404, 1.5395265, -0.19239068)
 mesh = SubResource("CapsuleMesh_74rn4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1436328278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33549404, 1.5336802, -0.19239068)
 shape = SubResource("CapsuleShape3D_3s45h")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=2090550246]
+transform = Transform3D(0.9999834, 0.005695208, -0.00094711065, -0.0022985616, 0.5432128, 0.839592, 0.0052961335, -0.8395758, 0.5432168, -0.11638048, 6.0088243, 4.645211)
+fov = 88.499466
 
 [node name="Enviroment" type="Node3D" parent="." unique_id=969576870]
 
